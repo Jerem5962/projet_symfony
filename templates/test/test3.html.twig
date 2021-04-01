@@ -1,0 +1,25 @@
+{% extends "base.html.twig" %}
+
+{% block body %}
+
+    <h1> {{ title }} </h1>
+    <p> method utilisée {{method}} </p>
+    <p> valeur de la variable: {{searchValue}}
+
+    {# Commmentaire #}
+
+    {% if title == "Test 3" %}
+        <p>C'est le bon titre</p>
+    {% else %}
+        <p>Ce n'est pas le bon titre</p>
+    {% endif %}
+
+    <h2>{{ students | length }} étudiants</h2>
+
+    <ul>
+        {% for student in students %}
+            <li>{{student}}</li>
+        {% endfor %}
+    </ul>
+
+{% endblock %}
