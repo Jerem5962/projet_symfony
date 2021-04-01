@@ -51,6 +51,13 @@ class TestController extends AbstractController
                 "jerem", "umberto", "noemie", "clementine"
             ]
         ]);
+    }
 
+    /**
+     * @Route("/test4/student/{id}/delete", name="test4", requirements={"id" = "\d+"})
+     */
+    public function test4($id)
+    {
+        return new Response($id);
     }
 }
