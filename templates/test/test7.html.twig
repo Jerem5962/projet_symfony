@@ -1,0 +1,28 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+
+<h1>{{ country.name }}</h1>
+<p>Villes enregistrées dans le pays:</p>
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Nom</th>
+            <th>Maire</th>
+            <th>Action</th>
+        </tr>
+    </thead>
+    <tbody>
+    {% for city in country.city %}
+        <tr>
+            <td>{{ city.name }}</td>
+            <td>{{ city.major }}</td>
+            <td>
+                <a class="btn btn-secondary" href="{{ path("modifCity", {id:city.id}) }}">Modifier</a>
+                <a class="btn btn-danger" href="{{ path("test3") }}">Supprimer</a>
+            </td>
+        </tr>
+    {% endfor %}
+    </tbody>
+</table>
+{% endblock %}

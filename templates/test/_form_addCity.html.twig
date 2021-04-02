@@ -1,0 +1,15 @@
+{% extends "base.html.twig" %}
+
+{% block body %}
+    <h1>Formulaire City</h1>
+    <form action="" method="POST">
+    <input type="text" name="name" placeholder="nom" {% if city.name is defined %} value="{{ city.name }}" {% endif %}>
+    <input type="text" name="major" placeholder="major" {% if city.major is defined %} value="{{ city.major }}" {% endif %}>
+    <select name="country">
+    {% for country in countries %}
+        <option {% if city.country is defined %} value="{{ city.country.__ToString() }}" {% endif %}>{{ country.name}}</option>
+    {% endfor %}
+    </select>
+    <button class="btn btn-primary">Valider</button>
+    </form>
+{% endblock %}
