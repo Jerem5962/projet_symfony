@@ -123,7 +123,7 @@ class TestController extends AbstractController
     
     /**
      * @Route("/test/", name="form")
-     * Affichage d'un pays
+     * Ajout d'un pays
      */
     public function test8(Request $request, EntityManagerInterface $em)
     {

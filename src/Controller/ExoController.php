@@ -66,8 +66,8 @@ class ExoController extends AbstractController
         ]);
     }
 
-        /**
-     * @Route("/exo/exo2/{id}", name="modifCity", methods={"GET", "POST"})
+    /**
+     * @Route("/exo/exo2/update/{id}", name="modifCity", methods={"GET", "POST"})
      */
     public function modifCity(
         $id, 
@@ -84,12 +84,13 @@ class ExoController extends AbstractController
             $name = $req->request->get("name");
             $major = $req->request->get("major");
             $country = $req->request->get("country");
-            $country = $repo->findOneBy(["name" => $country]);
+
+            $country = $repoCountry->findOneBy(["name" => $country]);
+
             $city
                 ->setName($name)
                 ->setMajor($major)
                 ->setCountry($country);
-                dd($city);
 
             $manager->persist($city);
             $manager->flush();
