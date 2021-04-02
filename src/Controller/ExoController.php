@@ -102,6 +102,19 @@ class ExoController extends AbstractController
             "city" => $city,
             "countries" => $countries
         ]);
+    }
 
+    
+    /**
+     * @Route("/exo/exo2/delete/{id}", name="deleteCity", methods={"GET", "POST"})
+     */
+    public function deleteCity(
+        $id,
+        EntityManagerInterface $manager, 
+        CityRepository $repo
+        )
+    {
+
+        return $this->redirectToRoute("test6");
     }
 }

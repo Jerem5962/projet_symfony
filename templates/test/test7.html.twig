@@ -19,7 +19,7 @@
             <td>{{ city.major }}</td>
             <td>
                 <a class="btn btn-secondary" href="{{ path("modifCity", {id:city.id}) }}">Modifier</a>
-                <a class="btn btn-danger" href="{{ path("test3") }}">Supprimer</a>
+                <a class="btn btn-danger" href="{{ path("deleteCity", {id:city.id}) }}">Supprimer</a>
             </td>
         </tr>
     {% endfor %}
